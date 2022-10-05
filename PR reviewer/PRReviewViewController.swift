@@ -7,13 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class PRReviewViewController: UIViewController {
+    private let viewModel = PRReviewViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel.fetchPRs(ofAuthor: "Faizan-92")
     }
-
-
 }
 
