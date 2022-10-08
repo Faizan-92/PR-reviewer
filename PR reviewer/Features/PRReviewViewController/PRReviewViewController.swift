@@ -8,10 +8,9 @@
 import UIKit
 
 class PRReviewViewController: UIViewController {
-    private let viewModel = PRReviewViewModel()
+    private let viewModel = PRReviewViewModel(gitService: GitService())
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchPRs(ofAuthor: "Faizan-92")
+        viewModel.fetchPRs()
     }
 }
-

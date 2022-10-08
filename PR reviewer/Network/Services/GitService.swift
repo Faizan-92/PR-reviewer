@@ -10,7 +10,7 @@ import Alamofire
 
 enum GitServiceEndPoint: BaseServiceEndPoint {
 
-    case fetchPRs(author: String)
+    case fetchPRs(repoName: String)
 
     var endPoint: URL {
         return baseUrl.appendingPathComponent(path)
@@ -25,10 +25,9 @@ enum GitServiceEndPoint: BaseServiceEndPoint {
 
     var queryParams: String {
         switch self {
-        case .fetchPRs(let author):
+        case .fetchPRs(let repoName):
             let params: [String: String] = [
-                "repo": AppConstants.repoName,
-                "author": "\(author)",
+                "repo": repoName,
                 "is": "pr"
             ]
             return params.compactMap { $0 + ":" + $1 }.joined(separator: "+")
@@ -46,10 +45,10 @@ enum GitServiceEndPoint: BaseServiceEndPoint {
 
 final class GitService: BaseService {
     func fetchPRs(
-        author: String,
+        repoName: String,
         completionHandler: @escaping ((PRInfoResponseModel) -> Void)
     ) {
-        let endPoint: GitServiceEndPoint = .fetchPRs(author: author)
+        let endPoint: GitServiceEndPoint = .fetchPRs(repoName: repoName)
         var url = endPoint.baseUrl.appendingPathComponent(endPoint.path).absoluteString + "?q="
         url += endPoint.queryParams
         callApi(
