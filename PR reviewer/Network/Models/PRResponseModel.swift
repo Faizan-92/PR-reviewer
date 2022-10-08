@@ -11,10 +11,12 @@ import Foundation
 struct PRInfoResponseModel: Decodable {
     let totalCount: Int?
     let items: [PRItem]?
+    let prDetail: PRDetail?
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case items
+        case prDetail = "pull_request"
     }
 }
 
@@ -25,7 +27,7 @@ struct PRItem: Decodable {
     let user: PRAssigneeInfo?
     let state: PRState?
     let createdAt, updatedAt, closedAt: String?
-    let draft: Bool?
+    let isDraft: Bool?
     let score: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -33,7 +35,7 @@ struct PRItem: Decodable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case closedAt = "closed_at"
-        case draft
+        case isDraft = "draft"
         case score
     }
 }
@@ -49,6 +51,15 @@ struct PRAssigneeInfo: Decodable {
     }
 }
 
+struct PRDetail: Decodable {
+    let mergedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case mergedAt = "merged_at"
+    }
+}
+
 enum PRState: String, Decodable {
+    case open
     case closed
 }
