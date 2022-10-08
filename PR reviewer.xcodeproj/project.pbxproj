@@ -11,6 +11,7 @@
 		B307BB3F28F15AB100EAEB03 /* PRReviewViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB3E28F15AB100EAEB03 /* PRReviewViewController + TableView.swift */; };
 		B307BB4128F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4028F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift */; };
 		B307BB4328F15FCA00EAEB03 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */; };
+		B307BB4728F1D3A800EAEB03 /* IconAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4628F1D3A800EAEB03 /* IconAsset.swift */; };
 		B32EB1DE28ED470700B475FB /* BaseServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */; };
 		B32EB1E028ED537C00B475FB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DF28ED537C00B475FB /* Logger.swift */; };
 		B32EB1E528ED54A000B475FB /* PRResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1E428ED54A000B475FB /* PRResponseModel.swift */; };
@@ -55,6 +56,7 @@
 		B307BB3E28F15AB100EAEB03 /* PRReviewViewController + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PRReviewViewController + TableView.swift"; sourceTree = "<group>"; };
 		B307BB4028F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRInfoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		B307BB4628F1D3A800EAEB03 /* IconAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAsset.swift; sourceTree = "<group>"; };
 		B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceEndPoint.swift; sourceTree = "<group>"; };
 		B32EB1DF28ED537C00B475FB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B32EB1E428ED54A000B475FB /* PRResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRResponseModel.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				B32EB1DF28ED537C00B475FB /* Logger.swift */,
 				B32EB1E828ED591F00B475FB /* AppConstants.swift */,
+				B307BB4628F1D3A800EAEB03 /* IconAsset.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				B32EB1E028ED537C00B475FB /* Logger.swift in Sources */,
 				B3A60C9028ED3E6400EFACA2 /* PRReviewViewController.swift in Sources */,
 				B32EB1ED28ED5B7200B475FB /* BaseRequest.swift in Sources */,
+				B307BB4728F1D3A800EAEB03 /* IconAsset.swift in Sources */,
 				B307BB4328F15FCA00EAEB03 /* UIView + Extensions.swift in Sources */,
 				B3A60C8C28ED3E6400EFACA2 /* AppDelegate.swift in Sources */,
 				B307BB4128F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift in Sources */,

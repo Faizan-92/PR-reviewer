@@ -38,15 +38,27 @@ final class PRInfoTableViewCell: UITableViewCell {
             // TODO: handle unclosed PR scenarios
             closedDateLabel.text = "Closed at: " + closedTime
         }
-        handlePRState(item.state)
+        handlePRState(item: item)
         userHandleLabel.text = item.user?.handleName
     }
 
-    private func handlePRState(_ state: PRState?) {
-        guard let state = state else { return }
-        switch state {
+    private func handlePRState(item: PRItem?) {
+        guard let item = item,
+              let isDraftPR = item.isDraft,
+              let state = item.state
+        else { return }
+
+        if isDraftPR {
+            statusImageView.image = IconAsset.prDraft.originalImage
+        }
+        switch item.state {
         case .closed:
-            break // TODO: handle apt statusImageView here
+            // TODO: Handle merged PR scenario
+            statusImageView.image =  IconAsset.prClosed.originalImage
+        case .open:
+            statusImageView.image = IconAsset.prOpen.originalImage
+        default:
+            break
         }
     }
 
