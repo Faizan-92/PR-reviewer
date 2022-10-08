@@ -8,15 +8,19 @@
 import Foundation
 
 final class PRReviewViewModel {
-    var gitService: GitService
-
+    private let gitService: GitService
+    var dataSource: [PRItem] = []
+    
     init(gitService: GitService) {
         self.gitService = gitService
     }
 
-    func fetchPRs() {
-        gitService.fetchPRs(repoName: AppConstants.repoName) { response in
-            Logger.log("info: \(response)")
+    func fetchPRs(completionHandler: @escaping (([PRItem]) -> Void)) {
+        gitService.fetchPRs(repoName: AppConstants.repoName) { [weak self] response in
+            if let items = response.items {
+                self?.dataSource.append(contentsOf: items)
+                completionHandler(items)
+            }
         }
     }
 }

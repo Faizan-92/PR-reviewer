@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B307BB3D28F159D800EAEB03 /* NSObject + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB3C28F159D800EAEB03 /* NSObject + Extensions.swift */; };
+		B307BB3F28F15AB100EAEB03 /* PRReviewViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB3E28F15AB100EAEB03 /* PRReviewViewController + TableView.swift */; };
+		B307BB4128F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4028F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift */; };
+		B307BB4328F15FCA00EAEB03 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */; };
 		B32EB1DE28ED470700B475FB /* BaseServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */; };
 		B32EB1E028ED537C00B475FB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DF28ED537C00B475FB /* Logger.swift */; };
 		B32EB1E528ED54A000B475FB /* PRResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1E428ED54A000B475FB /* PRResponseModel.swift */; };
@@ -14,6 +18,8 @@
 		B32EB1E928ED591F00B475FB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1E828ED591F00B475FB /* AppConstants.swift */; };
 		B32EB1EB28ED5A7300B475FB /* PRReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1EA28ED5A7300B475FB /* PRReviewViewModel.swift */; };
 		B32EB1ED28ED5B7200B475FB /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1EC28ED5B7200B475FB /* BaseRequest.swift */; };
+		B378654E28F14BB800DB7D04 /* PRInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B378654D28F14BB800DB7D04 /* PRInfoTableViewCell.xib */; };
+		B378655028F1531A00DB7D04 /* PRInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B378654F28F1531A00DB7D04 /* PRInfoTableViewCell.swift */; };
 		B3A60C8C28ED3E6400EFACA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A60C8B28ED3E6400EFACA2 /* AppDelegate.swift */; };
 		B3A60C8E28ED3E6400EFACA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A60C8D28ED3E6400EFACA2 /* SceneDelegate.swift */; };
 		B3A60C9028ED3E6400EFACA2 /* PRReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A60C8F28ED3E6400EFACA2 /* PRReviewViewController.swift */; };
@@ -45,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B307BB3C28F159D800EAEB03 /* NSObject + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + Extensions.swift"; sourceTree = "<group>"; };
+		B307BB3E28F15AB100EAEB03 /* PRReviewViewController + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PRReviewViewController + TableView.swift"; sourceTree = "<group>"; };
+		B307BB4028F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRInfoTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceEndPoint.swift; sourceTree = "<group>"; };
 		B32EB1DF28ED537C00B475FB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B32EB1E428ED54A000B475FB /* PRResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRResponseModel.swift; sourceTree = "<group>"; };
@@ -52,6 +62,8 @@
 		B32EB1E828ED591F00B475FB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B32EB1EA28ED5A7300B475FB /* PRReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRReviewViewModel.swift; sourceTree = "<group>"; };
 		B32EB1EC28ED5B7200B475FB /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		B378654D28F14BB800DB7D04 /* PRInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRInfoTableViewCell.xib; sourceTree = "<group>"; };
+		B378654F28F1531A00DB7D04 /* PRInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRInfoTableViewCell.swift; sourceTree = "<group>"; };
 		B3A60C8828ED3E6400EFACA2 /* PR reviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PR reviewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A60C8B28ED3E6400EFACA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3A60C8D28ED3E6400EFACA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B307BB3B28F159C600EAEB03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B307BB3C28F159D800EAEB03 /* NSObject + Extensions.swift */,
+				B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B32EB1E128ED538500B475FB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +143,35 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B378654B28F14B7600DB7D04 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B378654C28F14B8700DB7D04 /* PRReviewViewController */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B378654C28F14B8700DB7D04 /* PRReviewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3A60C8F28ED3E6400EFACA2 /* PRReviewViewController.swift */,
+				B307BB3E28F15AB100EAEB03 /* PRReviewViewController + TableView.swift */,
+				B32EB1EA28ED5A7300B475FB /* PRReviewViewModel.swift */,
+				B378655128F1532100DB7D04 /* PRInfoTableViewCell */,
+			);
+			path = PRReviewViewController;
+			sourceTree = "<group>";
+		};
+		B378655128F1532100DB7D04 /* PRInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B378654D28F14BB800DB7D04 /* PRInfoTableViewCell.xib */,
+				B378654F28F1531A00DB7D04 /* PRInfoTableViewCell.swift */,
+				B307BB4028F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift */,
+			);
+			path = PRInfoTableViewCell;
+			sourceTree = "<group>";
+		};
 		B3A60C7F28ED3E6400EFACA2 = {
 			isa = PBXGroup;
 			children = (
@@ -145,12 +195,12 @@
 		B3A60C8A28ED3E6400EFACA2 /* PR reviewer */ = {
 			isa = PBXGroup;
 			children = (
+				B307BB3B28F159C600EAEB03 /* Extensions */,
+				B378654B28F14B7600DB7D04 /* Features */,
 				B32EB1E128ED538500B475FB /* Utils */,
 				B3A60CC028ED406800EFACA2 /* Network */,
 				B3A60C8B28ED3E6400EFACA2 /* AppDelegate.swift */,
 				B3A60C8D28ED3E6400EFACA2 /* SceneDelegate.swift */,
-				B3A60C8F28ED3E6400EFACA2 /* PRReviewViewController.swift */,
-				B32EB1EA28ED5A7300B475FB /* PRReviewViewModel.swift */,
 				B3A60C9128ED3E6400EFACA2 /* Main.storyboard */,
 				B3A60C9428ED3E6500EFACA2 /* Assets.xcassets */,
 				B3A60C9628ED3E6500EFACA2 /* LaunchScreen.storyboard */,
@@ -296,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A60C9828ED3E6500EFACA2 /* LaunchScreen.storyboard in Resources */,
+				B378654E28F14BB800DB7D04 /* PRInfoTableViewCell.xib in Resources */,
 				B3A60C9528ED3E6500EFACA2 /* Assets.xcassets in Resources */,
 				B3A60C9328ED3E6400EFACA2 /* Main.storyboard in Resources */,
 			);
@@ -326,11 +377,16 @@
 				B32EB1E728ED587800B475FB /* BaseService.swift in Sources */,
 				B32EB1E928ED591F00B475FB /* AppConstants.swift in Sources */,
 				B3A60CBF28ED406100EFACA2 /* GitService.swift in Sources */,
+				B307BB3F28F15AB100EAEB03 /* PRReviewViewController + TableView.swift in Sources */,
 				B32EB1E028ED537C00B475FB /* Logger.swift in Sources */,
 				B3A60C9028ED3E6400EFACA2 /* PRReviewViewController.swift in Sources */,
 				B32EB1ED28ED5B7200B475FB /* BaseRequest.swift in Sources */,
+				B307BB4328F15FCA00EAEB03 /* UIView + Extensions.swift in Sources */,
 				B3A60C8C28ED3E6400EFACA2 /* AppDelegate.swift in Sources */,
+				B307BB4128F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift in Sources */,
 				B32EB1DE28ED470700B475FB /* BaseServiceEndPoint.swift in Sources */,
+				B378655028F1531A00DB7D04 /* PRInfoTableViewCell.swift in Sources */,
+				B307BB3D28F159D800EAEB03 /* NSObject + Extensions.swift in Sources */,
 				B32EB1E528ED54A000B475FB /* PRResponseModel.swift in Sources */,
 				B3A60C8E28ED3E6400EFACA2 /* SceneDelegate.swift in Sources */,
 			);
