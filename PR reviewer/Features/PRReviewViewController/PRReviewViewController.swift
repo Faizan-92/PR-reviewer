@@ -7,10 +7,34 @@
 
 import UIKit
 
-class PRReviewViewController: UIViewController {
-    private let viewModel = PRReviewViewModel(gitService: GitService())
+final class PRReviewViewController: UIViewController {
+
+    @IBOutlet weak var prTableView: UITableView!
+
+    let viewModel = PRReviewViewModel(gitService: GitService())
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchPRs()
+        registerCells()
+        setDelegates()
+        fetchPRs()
+    }
+
+    private func registerCells() {
+        prTableView.register(
+            UINib(nibName: PRInfoTableViewCell.className, bundle: nil),
+            forCellReuseIdentifier: PRInfoTableViewCell.className
+        )
+    }
+
+    private func setDelegates() {
+        prTableView.delegate = self
+        prTableView.dataSource = self
+    }
+
+    private func fetchPRs() {
+        viewModel.fetchPRs { [weak self] newItems in
+            self?.prTableView.reloadData() // TODO: update with batch updates
+        }
     }
 }

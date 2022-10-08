@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,16 +12,44 @@
         <!--Review View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PRReviewViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PRReviewViewController" customModule="PR_reviewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dq-jF-Qg0" userLabel="container_view">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1br-FI-sBA">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1br-FI-sBA" firstAttribute="leading" secondItem="2dq-jF-Qg0" secondAttribute="leading" id="7NK-t2-3Iq"/>
+                                    <constraint firstItem="1br-FI-sBA" firstAttribute="top" secondItem="2dq-jF-Qg0" secondAttribute="top" id="B5B-zf-HEz"/>
+                                    <constraint firstAttribute="bottom" secondItem="1br-FI-sBA" secondAttribute="bottom" id="F9Y-CB-7bP"/>
+                                    <constraint firstAttribute="trailing" secondItem="1br-FI-sBA" secondAttribute="trailing" id="tLx-AW-Vto"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2dq-jF-Qg0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rU-fv-4da"/>
+                            <constraint firstAttribute="bottom" secondItem="2dq-jF-Qg0" secondAttribute="bottom" id="EDe-VI-f9J"/>
+                            <constraint firstItem="2dq-jF-Qg0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I9q-t4-nqY"/>
+                            <constraint firstItem="2dq-jF-Qg0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="juL-MO-ZIg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="prTableView" destination="1br-FI-sBA" id="Cog-Ku-eOx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="43" y="56"/>
         </scene>
     </scenes>
     <resources>

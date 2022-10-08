@@ -23,7 +23,7 @@ struct PRItem: Decodable {
     let number: Int?
     let title: String
     let user: PRAssigneeInfo?
-    let state: String?
+    let state: PRState?
     let createdAt, updatedAt, closedAt: String?
     let draft: Bool?
     let score: Int?
@@ -40,9 +40,15 @@ struct PRItem: Decodable {
 
 // MARK: - AssigneeInfo
 struct PRAssigneeInfo: Decodable {
+    let handleName: String?
     let avatarURL: String?
 
     enum CodingKeys: String, CodingKey {
+        case handleName = "login"
         case avatarURL = "avatar_url"
     }
+}
+
+enum PRState: String, Decodable {
+    case closed
 }
