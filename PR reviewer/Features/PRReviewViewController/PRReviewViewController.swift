@@ -37,14 +37,23 @@ final class PRReviewViewController: UIViewController {
     func addPRsIfPossible() {
         viewModel.fetchPRsIfPossible(
             completionHandler: { [weak self] newItems, indexToInsert in
-            guard let tableView = self?.prTableView else { return }
-            UIView.performWithoutAnimation {
-                tableView.performBatchUpdates({
-                    let rangeToInsert = indexToInsert..<indexToInsert + newItems.count
-                    let indexPaths = rangeToInsert.map { IndexPath(row: $0, section: 0) }
-                    tableView.insertRows(at: indexPaths, with: .none)
-                })
-            }
+                guard let tableView = self?.prTableView else { return }
+                // if no PRs are found, handle zero state.
+                if newItems.isEmpty && indexToInsert == 0 {
+                    self?.showToast(
+                        message: ErrorMessage.noPRsFound.rawValue,
+                        font: .systemFont(ofSize: 15),
+                        duration: .greatestFiniteMagnitude
+                    )
+                    return
+                }
+                UIView.performWithoutAnimation {
+                    tableView.performBatchUpdates({
+                        let rangeToInsert = indexToInsert..<indexToInsert + newItems.count
+                        let indexPaths = rangeToInsert.map { IndexPath(row: $0, section: 0) }
+                        tableView.insertRows(at: indexPaths, with: .none)
+                    })
+                }
         },
             errorHandler: { [weak self] in
                 self?.showToast(
