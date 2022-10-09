@@ -17,7 +17,7 @@ final class PRReviewViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setDelegates()
-        fetchPRsIfPossible()
+        addPRsIfPossible()
     }
 
     private func registerCells() {
@@ -31,10 +31,19 @@ final class PRReviewViewController: UIViewController {
         prTableView.delegate = self
         prTableView.dataSource = self
     }
-
-    func fetchPRsIfPossible() {
-        viewModel.fetchPRsIfPossible { [weak self] newItems in
-            self?.prTableView.reloadData() // TODO: update with batch updates
+    
+    /// fetches more PR info if all the PRs are not fetched already. Once it fetches info from BE, it will also insert it to
+    /// tableview using batch updates. Also, this insertion is done without any animation.
+    func addPRsIfPossible() {
+        viewModel.fetchPRsIfPossible { [weak self] newItems, indexToInsert in
+            guard let tableView = self?.prTableView else { return }
+            UIView.performWithoutAnimation {
+                tableView.performBatchUpdates({
+                    let rangeToInsert = indexToInsert..<indexToInsert + newItems.count
+                    let indexPaths = rangeToInsert.map { IndexPath(row: $0, section: 0) }
+                    tableView.insertRows(at: indexPaths, with: .none)
+                })
+            }
         }
     }
 }

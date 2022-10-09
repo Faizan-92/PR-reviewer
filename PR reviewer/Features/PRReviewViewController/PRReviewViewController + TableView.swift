@@ -12,7 +12,7 @@ extension PRReviewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // If we are on second last row, try to fetch more PRs info if possible
         if indexPath.row > viewModel.dataSource.count - 2 {
-            fetchPRsIfPossible()
+            addPRsIfPossible()
         }
     }
 }

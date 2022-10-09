@@ -80,6 +80,5 @@ final class PRInfoTableViewCell: UITableViewCell {
         closedDateLabel.text = nil
         profilePicImageView.image = nil
         userHandleLabel.text = nil
-        closedDateLabel.isHidden = false
     }
 }
