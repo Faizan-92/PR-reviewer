@@ -13,6 +13,8 @@
 		B307BB4328F15FCA00EAEB03 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */; };
 		B307BB4728F1D3A800EAEB03 /* IconAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4628F1D3A800EAEB03 /* IconAsset.swift */; };
 		B307BB4C28F2876F00EAEB03 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B307BB4B28F2876F00EAEB03 /* SDWebImage */; };
+		B307BB4E28F295F600EAEB03 /* PRInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4D28F295F600EAEB03 /* PRInfoRequestModel.swift */; };
+		B307BB5028F2A5D000EAEB03 /* Encodable + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4F28F2A5D000EAEB03 /* Encodable + Extensions.swift */; };
 		B32EB1DE28ED470700B475FB /* BaseServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */; };
 		B32EB1E028ED537C00B475FB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DF28ED537C00B475FB /* Logger.swift */; };
 		B32EB1E528ED54A000B475FB /* PRResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1E428ED54A000B475FB /* PRResponseModel.swift */; };
@@ -58,6 +60,8 @@
 		B307BB4028F15C5900EAEB03 /* PRInfoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRInfoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		B307BB4628F1D3A800EAEB03 /* IconAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAsset.swift; sourceTree = "<group>"; };
+		B307BB4D28F295F600EAEB03 /* PRInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRInfoRequestModel.swift; sourceTree = "<group>"; };
+		B307BB4F28F2A5D000EAEB03 /* Encodable + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable + Extensions.swift"; sourceTree = "<group>"; };
 		B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceEndPoint.swift; sourceTree = "<group>"; };
 		B32EB1DF28ED537C00B475FB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B32EB1E428ED54A000B475FB /* PRResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRResponseModel.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				B307BB3C28F159D800EAEB03 /* NSObject + Extensions.swift */,
 				B307BB4228F15FCA00EAEB03 /* UIView + Extensions.swift */,
+				B307BB4F28F2A5D000EAEB03 /* Encodable + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B32EB1E428ED54A000B475FB /* PRResponseModel.swift */,
+				B307BB4D28F295F600EAEB03 /* PRInfoRequestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,11 +389,13 @@
 				B32EB1EB28ED5A7300B475FB /* PRReviewViewModel.swift in Sources */,
 				B32EB1E728ED587800B475FB /* BaseService.swift in Sources */,
 				B32EB1E928ED591F00B475FB /* AppConstants.swift in Sources */,
+				B307BB4E28F295F600EAEB03 /* PRInfoRequestModel.swift in Sources */,
 				B3A60CBF28ED406100EFACA2 /* GitService.swift in Sources */,
 				B307BB3F28F15AB100EAEB03 /* PRReviewViewController + TableView.swift in Sources */,
 				B32EB1E028ED537C00B475FB /* Logger.swift in Sources */,
 				B3A60C9028ED3E6400EFACA2 /* PRReviewViewController.swift in Sources */,
 				B32EB1ED28ED5B7200B475FB /* BaseRequest.swift in Sources */,
+				B307BB5028F2A5D000EAEB03 /* Encodable + Extensions.swift in Sources */,
 				B307BB4728F1D3A800EAEB03 /* IconAsset.swift in Sources */,
 				B307BB4328F15FCA00EAEB03 /* UIView + Extensions.swift in Sources */,
 				B3A60C8C28ED3E6400EFACA2 /* AppDelegate.swift in Sources */,

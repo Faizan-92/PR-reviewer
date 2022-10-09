@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 final class PRInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var statusImageView: UIImageView!
@@ -33,6 +34,7 @@ final class PRInfoTableViewCell: UITableViewCell {
         titleLabel.text = item.title
         handlePRState(item: item)
         userHandleLabel.text = item.user?.handleName
+        profilePicImageView.sd_setImage(with: URL(string: item.user?.avatarURL ?? ""))
     }
 
     private func handlePRState(item: PRItem?) {
@@ -49,7 +51,11 @@ final class PRInfoTableViewCell: UITableViewCell {
         case .closed:
             let isPRClosed = (item.detail?.mergedAt == nil)
             let icon: IconAsset = isPRClosed ? .prClosed : .prMerged
-            statusImageView.image = icon.originalImage
+            if isPRClosed {
+                statusImageView.image = icon.originalImage
+            } else {
+                statusImageView.image = icon.templateImage?.sd_tintedImage(with: .purple)
+            }
         case .open:
             statusImageView.image = IconAsset.prOpen.originalImage
             closedDateLabel.isHidden = true
@@ -68,7 +74,7 @@ final class PRInfoTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        statusImageView = nil
+        statusImageView.image = nil
         titleLabel.text = nil
         createdDateLabel.text = nil
         closedDateLabel.text = nil

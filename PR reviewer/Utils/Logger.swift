@@ -8,9 +8,9 @@
 import Foundation
 
 final class Logger {
-    static func log(_ text: String) {
+    static func log(_ text: String?) {
         #if DEBUG
-        print(text)
+        print(text ?? "nil")
         #endif
     }
 }

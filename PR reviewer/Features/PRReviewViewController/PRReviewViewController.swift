@@ -17,7 +17,7 @@ final class PRReviewViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setDelegates()
-        fetchPRs()
+        fetchPRsIfPossible()
     }
 
     private func registerCells() {
@@ -32,8 +32,8 @@ final class PRReviewViewController: UIViewController {
         prTableView.dataSource = self
     }
 
-    private func fetchPRs() {
-        viewModel.fetchPRs { [weak self] newItems in
+    func fetchPRsIfPossible() {
+        viewModel.fetchPRsIfPossible { [weak self] newItems in
             self?.prTableView.reloadData() // TODO: update with batch updates
         }
     }
