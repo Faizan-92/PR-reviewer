@@ -46,6 +46,7 @@ enum GitServiceEndPoint: BaseServiceEndPoint {
 final class GitService: BaseService {
     func fetchPRs(
         repoName: String,
+        requestModel: PRInfoRequestModel,
         completionHandler: @escaping ((PRInfoResponseModel) -> Void)
     ) {
         let endPoint: GitServiceEndPoint = .fetchPRs(repoName: repoName)
@@ -54,6 +55,7 @@ final class GitService: BaseService {
         callApi(
             urlString: url,
             method: endPoint.methodType,
+            parameters: requestModel.asDictionary(),
             completionHandler: completionHandler
         )
     }
