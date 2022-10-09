@@ -1,6 +1,8 @@
 # PR-reviewer
 An iOS application that shows list of PRs in for a given repository using github apis.
 
+Note: Repo name can be changed from AppConstants file to use this Project to fetch PRs of other repo.
+
 <b>Architecture: MVVM </b>
 
 Dependencies
