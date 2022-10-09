@@ -21,7 +21,11 @@ final class PRReviewViewModel {
     /// After fetching PR info, it inserts it to the data source. If all PRs are already fetched, no action is performed.
     /// - Parameter completionHandler: Closure that is executed after fetching next set of PRs from BE.
     /// Takes list of new PRs and index path where the new items need to be inserted.
-    func fetchPRsIfPossible(completionHandler: @escaping (([PRItem], Int) -> Void)) {
+    /// - Parameter errorHandler: Closure that needs to be executed if API failure occurs.
+    func fetchPRsIfPossible(
+        completionHandler: @escaping (([PRItem], Int) -> Void),
+        errorHandler: @escaping(() -> Void)
+    ) {
         // If all PRs are already fetched, then don't make API call
         guard totalPRs > dataSource.count else { return }
 
@@ -42,7 +46,7 @@ final class PRReviewViewModel {
                 }
             },
             errorHandler: {
-            // TODO: Handle error
+            errorHandler()
         })
     }
 }
