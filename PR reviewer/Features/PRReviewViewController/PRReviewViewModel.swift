@@ -16,8 +16,12 @@ final class PRReviewViewModel {
     init(gitService: GitService) {
         self.gitService = gitService
     }
-
-    func fetchPRsIfPossible(completionHandler: @escaping (([PRItem]) -> Void)) {
+    
+    /// Fetches PR info from BE if all PRs are not fetched already. Page size of one fetch request is set to 10 right now.
+    /// After fetching PR info, it inserts it to the data source. If all PRs are already fetched, no action is performed.
+    /// - Parameter completionHandler: Closure that is executed after fetching next set of PRs from BE.
+    /// Takes list of new PRs and index path where the new items need to be inserted.
+    func fetchPRsIfPossible(completionHandler: @escaping (([PRItem], Int) -> Void)) {
         // If all PRs are already fetched, then don't make API call
         guard totalPRs > dataSource.count else { return }
 
@@ -28,13 +32,17 @@ final class PRReviewViewModel {
 
         gitService.fetchPRs(
             repoName: AppConstants.repoName,
-            requestModel: requestModel
-        ) { [weak self] response in
-            if let items = response.items, let totalPRs = response.totalCount {
-                self?.totalPRs = totalPRs
-                self?.dataSource.append(contentsOf: items)
-                completionHandler(items)
-            }
-        }
+            requestModel: requestModel,
+            completionHandler: { [weak self] value in
+                if let items = value.items, let totalPRs = value.totalCount {
+                    let indexToInsert = self?.dataSource.count ?? 0
+                    self?.totalPRs = totalPRs
+                    self?.dataSource.append(contentsOf: items)
+                    completionHandler(items, indexToInsert)
+                }
+            },
+            errorHandler: {
+            // TODO: Handle error
+        })
     }
 }

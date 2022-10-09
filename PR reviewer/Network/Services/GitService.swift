@@ -44,10 +44,18 @@ enum GitServiceEndPoint: BaseServiceEndPoint {
 
 
 final class GitService: BaseService {
+    
+    /// Fetches PR info for given repo on Github at a given page using Github backend.
+    /// - Parameters:
+    ///   - repoName: The name of repo who's PR details need to be fetched. e.g. Faizan-92/PR-reviewer
+    ///   - requestModel: Request model containing page no and size of page
+    ///   - completionHandler: closure that is triggered on successful api completion
+    ///   - errorHandler: closure that is triggered if some error occurs in api.
     func fetchPRs(
         repoName: String,
         requestModel: PRInfoRequestModel,
-        completionHandler: @escaping ((PRInfoResponseModel) -> Void)
+        completionHandler: @escaping ((PRInfoResponseModel) -> Void),
+        errorHandler: @escaping (() -> Void)
     ) {
         let endPoint: GitServiceEndPoint = .fetchPRs(repoName: repoName)
         var url = endPoint.baseUrl.appendingPathComponent(endPoint.path).absoluteString + "?q="
@@ -56,7 +64,10 @@ final class GitService: BaseService {
             urlString: url,
             method: endPoint.methodType,
             parameters: requestModel.asDictionary(),
-            completionHandler: completionHandler
+            completionHandler: completionHandler,
+            errorHandler: { _ in
+                errorHandler()
+            }
         )
     }
 }
