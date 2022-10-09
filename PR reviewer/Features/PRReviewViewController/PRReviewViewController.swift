@@ -37,29 +37,33 @@ final class PRReviewViewController: UIViewController {
     func addPRsIfPossible() {
         viewModel.fetchPRsIfPossible(
             completionHandler: { [weak self] newItems, indexToInsert in
-                guard let tableView = self?.prTableView else { return }
-                // if no PRs are found, handle zero state.
-                if newItems.isEmpty && indexToInsert == 0 {
-                    self?.showToast(
-                        message: ErrorMessage.noPRsFound.rawValue,
-                        font: .systemFont(ofSize: 15),
-                        duration: .greatestFiniteMagnitude
-                    )
-                    return
-                }
-                UIView.performWithoutAnimation {
-                    tableView.performBatchUpdates({
-                        let rangeToInsert = indexToInsert..<indexToInsert + newItems.count
-                        let indexPaths = rangeToInsert.map { IndexPath(row: $0, section: 0) }
-                        tableView.insertRows(at: indexPaths, with: .none)
-                    })
-                }
-        },
+                self?.handleNewItems(newItems, indexToInsert)
+            },
             errorHandler: { [weak self] in
                 self?.showToast(
                     message: ErrorMessage.somethingWentWrong.rawValue,
                     font: .systemFont(ofSize: 15)
                 )
             })
+    }
+
+    private func handleNewItems(_ newItems: [PRItem], _ indexToInsert: Int) {
+        // if no PRs are found, handle zero state.
+        if newItems.isEmpty && indexToInsert == 0 {
+            showToast(
+                message: ErrorMessage.noPRsFound.rawValue,
+                font: .systemFont(ofSize: 15),
+                duration: .greatestFiniteMagnitude
+            )
+            return
+        }
+
+        UIView.performWithoutAnimation {
+            prTableView.performBatchUpdates({
+                let rangeToInsert = indexToInsert..<indexToInsert + newItems.count
+                let indexPaths = rangeToInsert.map { IndexPath(row: $0, section: 0) }
+                prTableView.insertRows(at: indexPaths, with: .none)
+            })
+        }
     }
 }
