@@ -16,6 +16,10 @@
 		B307BB5028F2A5D000EAEB03 /* Encodable + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB4F28F2A5D000EAEB03 /* Encodable + Extensions.swift */; };
 		B307BB5428F2B54900EAEB03 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB5328F2B54900EAEB03 /* UIViewController + Extensions.swift */; };
 		B307BB5628F2B69B00EAEB03 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB5528F2B69B00EAEB03 /* ErrorMessage.swift */; };
+		B307BB5828F2C55400EAEB03 /* UnitTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB5728F2C55400EAEB03 /* UnitTestHelper.swift */; };
+		B307BB5D28F2C60C00EAEB03 /* PRItemMockResponse.json in Sources */ = {isa = PBXBuildFile; fileRef = B307BB5C28F2C60C00EAEB03 /* PRItemMockResponse.json */; };
+		B307BB5F28F2C65E00EAEB03 /* MockFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B307BB5E28F2C65E00EAEB03 /* MockFiles.swift */; };
+		B307BB6028F2C9ED00EAEB03 /* PRItemMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B307BB5C28F2C60C00EAEB03 /* PRItemMockResponse.json */; };
 		B32EB1DE28ED470700B475FB /* BaseServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */; };
 		B32EB1E028ED537C00B475FB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1DF28ED537C00B475FB /* Logger.swift */; };
 		B32EB1E528ED54A000B475FB /* PRResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EB1E428ED54A000B475FB /* PRResponseModel.swift */; };
@@ -64,6 +68,9 @@
 		B307BB4F28F2A5D000EAEB03 /* Encodable + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable + Extensions.swift"; sourceTree = "<group>"; };
 		B307BB5328F2B54900EAEB03 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		B307BB5528F2B69B00EAEB03 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		B307BB5728F2C55400EAEB03 /* UnitTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestHelper.swift; sourceTree = "<group>"; };
+		B307BB5C28F2C60C00EAEB03 /* PRItemMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PRItemMockResponse.json; sourceTree = "<group>"; };
+		B307BB5E28F2C65E00EAEB03 /* MockFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFiles.swift; sourceTree = "<group>"; };
 		B32EB1DD28ED470700B475FB /* BaseServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceEndPoint.swift; sourceTree = "<group>"; };
 		B32EB1DF28ED537C00B475FB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B32EB1E428ED54A000B475FB /* PRResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRResponseModel.swift; sourceTree = "<group>"; };
@@ -124,6 +131,15 @@
 				B307BB5328F2B54900EAEB03 /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B307BB5928F2C5D100EAEB03 /* MockResponse */ = {
+			isa = PBXGroup;
+			children = (
+				B307BB5C28F2C60C00EAEB03 /* PRItemMockResponse.json */,
+				B307BB5E28F2C65E00EAEB03 /* MockFiles.swift */,
+			);
+			path = MockResponse;
 			sourceTree = "<group>";
 		};
 		B32EB1E128ED538500B475FB /* Utils */ = {
@@ -226,7 +242,9 @@
 		B3A60CA128ED3E6500EFACA2 /* PR reviewerTests */ = {
 			isa = PBXGroup;
 			children = (
+				B307BB5928F2C5D100EAEB03 /* MockResponse */,
 				B3A60CA228ED3E6500EFACA2 /* PR_reviewerTests.swift */,
+				B307BB5728F2C55400EAEB03 /* UnitTestHelper.swift */,
 			);
 			path = "PR reviewerTests";
 			sourceTree = "<group>";
@@ -372,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B307BB6028F2C9ED00EAEB03 /* PRItemMockResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +435,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B307BB5D28F2C60C00EAEB03 /* PRItemMockResponse.json in Sources */,
 				B3A60CA328ED3E6500EFACA2 /* PR_reviewerTests.swift in Sources */,
+				B307BB5828F2C55400EAEB03 /* UnitTestHelper.swift in Sources */,
+				B307BB5F28F2C65E00EAEB03 /* MockFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
