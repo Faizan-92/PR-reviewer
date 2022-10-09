@@ -10,27 +10,50 @@ import XCTest
 
 class PR_reviewerTests: XCTestCase {
 
+    private var viewModel: PRReviewViewModel?
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = PRReviewViewModel(gitService: GitService())
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testFetchPRsWhenDataSourceIsEmpty() {
+        let expectation = self.expectation(
+            description: "fetch_pr_method_when_empty_datasource"
+        )
+        viewModel?.dataSource = []
+        viewModel?.fetchPRsIfPossible(completionHandler: { newItems, index in
+            XCTAssertTrue(newItems.count != 0, "new items fetched shouldn't be empty")
+            XCTAssert(index == 0, "index to insert should be zero when datasource is empty")
+            expectation.fulfill()
+        }, errorHandler: {})
+        
+        waitForExpectations(timeout: 30)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFetchPRsWhenDataSourceIsNotEmpty() {
+        let expectation = self.expectation(
+            description: "fetch_pr_method_when_non_empty_datasource"
+        )
+        
+        let data = UnitTestHelper.shared.getDataFromMockResponse(
+            fileName: MockFiles.prItem.rawValue
+        )
+        
+        if let prItem = try? JSONDecoder().decode(PRItem.self, from: data) {
+            viewModel?.dataSource = [ prItem ]
         }
-    }
 
+        viewModel?.fetchPRsIfPossible(completionHandler: { newItems, index in
+            XCTAssertTrue(newItems.count != 0, "new items fetched shouldn't be empty")
+            XCTAssertTrue(index == 1, "index to insert should be one when datasource has one value")
+            expectation.fulfill()
+        }, errorHandler: {})
+
+        waitForExpectations(timeout: 30)
+    }
 }
