@@ -35,7 +35,8 @@ final class PRReviewViewController: UIViewController {
     /// fetches more PR info if all the PRs are not fetched already. Once it fetches info from BE, it will also insert it to
     /// tableview using batch updates. Also, this insertion is done without any animation.
     func addPRsIfPossible() {
-        viewModel.fetchPRsIfPossible { [weak self] newItems, indexToInsert in
+        viewModel.fetchPRsIfPossible(
+            completionHandler: { [weak self] newItems, indexToInsert in
             guard let tableView = self?.prTableView else { return }
             UIView.performWithoutAnimation {
                 tableView.performBatchUpdates({
@@ -44,6 +45,12 @@ final class PRReviewViewController: UIViewController {
                     tableView.insertRows(at: indexPaths, with: .none)
                 })
             }
-        }
+        },
+            errorHandler: { [weak self] in
+                self?.showToast(
+                    message: ErrorMessage.somethingWentWrong.rawValue,
+                    font: .systemFont(ofSize: 15)
+                )
+            })
     }
 }
