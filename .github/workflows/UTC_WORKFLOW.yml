@@ -11,7 +11,7 @@ jobs:
       - name: Printing pwd
         run: echo "pwd is $(pwd)"
       - name: Running UTCs
-        run: cd .. && cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme
+        run: cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme
           PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS
           Simulator,name=iPhone 12,OS=15.5'
       - name: Upload Test Results
