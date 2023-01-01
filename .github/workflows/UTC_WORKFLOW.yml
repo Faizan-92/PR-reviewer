@@ -10,4 +10,4 @@ jobs:
       with:
         xcode-version: latest-stable
     - name: Running UTCs
-      run: xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+      run: cd .. && cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
