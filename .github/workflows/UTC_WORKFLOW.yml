@@ -8,8 +8,8 @@ jobs:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
-      - name: Printing current directory
-        run: echo "Current working directory: $(pwd)"
+      - name: Printing pwd
+        run: echo "pwd is $(pwd)"
       - name: Running UTCs
         run: cd .. && cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme
           PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS
