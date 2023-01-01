@@ -1,4 +1,4 @@
-name: CI
+name: Unit Tests Workflow
 
 on: [push]
 
@@ -6,8 +6,9 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-xcode@v2
+    - name: Select Xcode Version
+    - uses: actions/github-script@v4
+    run: sudo xcode-select -switch /Applications/Xcode_13.0.app
       with:
         xcode-version: 13.4.1
     - run: xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5' 
