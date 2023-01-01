@@ -9,7 +9,7 @@ jobs:
         with:
           xcode-version: latest-stable
       - name: Printing pwd
-        run: echo "pwd is $(pwd)"
+        run: echo "pwd is $(pwd) ls is $(ls -al)"
       - name: Running UTCs
         run: cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme
           PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS
