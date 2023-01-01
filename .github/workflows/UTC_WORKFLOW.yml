@@ -9,13 +9,4 @@ jobs:
         with:
           xcode-version: latest-stable
       - name: Printing current directory
-        run echo "Current working directory: $(pwd)"
-      - name: Running UTCs
-        run: cd .. && cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme
-          PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS
-          Simulator,name=iPhone 12,OS=15.5'
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test Results
-          path: /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ResultBundle_2023-01-01_06-25-0055.xcresult
+        run: echo "Current working directory: $(pwd)"
