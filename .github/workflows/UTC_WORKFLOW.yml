@@ -7,7 +7,7 @@ jobs:
     runs-on: macOS-latest
     steps:
     - name: Select Xcode Version
-      uses: actions/setup-xcode@v4
+      uses: actions/setup-xcode@v7
       with:
         xcode-version: 13.4.1
     - name: Running UTCs
