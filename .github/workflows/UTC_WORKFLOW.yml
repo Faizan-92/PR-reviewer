@@ -7,8 +7,8 @@ jobs:
     runs-on: macOS-latest
     steps:
     - name: Select Xcode Version
-    - uses: actions/github-script@v4
-    run: sudo xcode-select -switch /Applications/Xcode_13.0.app
-    with:
-    	xcode-version: 13.4.1
-    - run: xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5' 
+      uses: actions/setup-xcode@v2
+      with:
+        xcode-version: 13.4.1
+    - name: Running UTCs
+      run: xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
