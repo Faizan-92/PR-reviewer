@@ -10,7 +10,7 @@ jobs:
       with:
         xcode-version: latest-stable
     - name: Running UTCs
-      run: cd .. && cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
+      run: echo "Current working directory: $(pwd)" && cd .. && cd .. && xcodebuild test -project PR\ reviewer.xcodeproj -scheme PR\ reviewer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.5'
     - name: Upload Test Results
       uses: actions/upload-artifact@v2
       with:
